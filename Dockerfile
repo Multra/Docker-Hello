@@ -1,6 +1,6 @@
-FROM ubuntu
+FROM golang
 MAINTAINER Multra <multra@gmail.com>
-WORKDIR /hello
-ADD hello /hello
+ADD . /go/src/github.com/golang/example/hello
+RUN go install github.com/golang/example/hello
+ENTRYPOINT /go/bin/hello
 EXPOSE 8081
-CMD /hello/hello
