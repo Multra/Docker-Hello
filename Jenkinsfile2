@@ -14,7 +14,9 @@ node {
     def deployContainer = docker.image("multra/docker-hello")
     deployContainer.pull()
     deployContainer.inside {
-      sh "/var/jenkins_home/go/bin/hello"
+      sh "pwd"
+      sh "ls"
+      sh "/go/bin/hello"
     }
   }
 }
