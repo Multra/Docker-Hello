@@ -11,7 +11,7 @@ node {
     }
   }
   stage("deploy") {
-    def deployContainer = docker.image("golang")
+    def deployContainer = docker.image("multra/docker-hello")
     deployContainer.pull()
     deployContainer.inside {
       sh "/var/jenkins_home/go/bin/hello"
